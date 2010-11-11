@@ -1,0 +1,46 @@
+<li>
+<div class="mon-icons mon-symbol"><%= monster_symbol(monster.symbol) %>
+</div>
+<div class="mon-icons mon-image">
+  <%= monster_icon(monster.name) %>
+</div>
+<a href="<%= monster.url %>">
+  <span class="mon-name">
+    <%= monster.name %>
+  </span>
+</a>
+
+<ul class="mon-data">
+  <li class="fight">
+  <span class="mon-data-title">
+    Fight:
+  </span>
+  <span class="mon-data-text">
+    Difficulty: <%= diff_to_color(monster.difficulty) %> 
+    Speed 
+    Resistances
+    attacks
+    magic_res
+  </span>
+  </li>
+  <li class="eat">
+  <span class="mon-data-title">
+    Eat:
+    nutrition
+    Corpse
+    initial_effects
+    final_effects
+    intrinsics
+
+  </span>
+  <span class="mon-data-text">
+    Lvl
+  </span>
+  </li>
+  stats
+  alignment
+  weight
+
+
+</ul>
+  </li>

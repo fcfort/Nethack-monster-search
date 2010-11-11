@@ -1,0 +1,34 @@
+rake aborted!
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:4: syntax error, unexpected ',', expecting ')'
+               ,:alignment => 20, :attacks => "1d10X", :corpse => 50
+                ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:4: syntax error, unexpected ',', expecting keyword_end
+               ,:alignment => 20, :attacks => "1d10X", :corpse => 50
+                                                      ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:5: Can't assign to false
+...y => 10, :genocidable => false, :group => "small", :symbol =...
+...                               ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:5: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...genocidable => false, :group => "small", :symbol => "t", :le...
+...                               ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:5: syntax error, unexpected ',', expecting keyword_end
+...le => false, :group => "small", :symbol => "t", :level => 10,
+...                               ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:5: syntax error, unexpected ',', expecting keyword_end
+...oup => "small", :symbol => "t", :level => 10,
+...                               ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:7: syntax error, unexpected ',', expecting keyword_end
+                :resistances => "pois", :size => "large",:speed => 12
+                                       ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:7: syntax error, unexpected ',', expecting keyword_end
+                :resistances => "pois", :size => "large",:speed => 12
+                                                         ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:8: syntax error, unexpected tASSOC, expecting keyword_end
+                :weight => 1000, :final_effects = "", :...
+                          ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:9: syntax error, unexpected ',', expecting keyword_end
+...       :intrinsics => "poison", :url =>"http://nethack.wikia...
+...                               ^
+/home/frank/rails_projects/nethack_monster/db/migrate/20101105195132_add_first_monster.rb:9: syntax error, unexpected ')', expecting keyword_end
+
+(See full trace by running task with --trace)

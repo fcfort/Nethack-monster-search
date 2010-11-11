@@ -1,0 +1,13 @@
+<h1>Monster#index</h1>
+<% form_tag 'index', :method => :get, do %>
+  <p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<div id="products">
+  <ul class="mon-list">
+    <%= render @monsters %>
+  </ul>
+</div>

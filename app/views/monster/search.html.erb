@@ -1,0 +1,11 @@
+<h1>Monster#search</h1>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :name => nil %>
+<div id="results" />
+
+  
+  <%= form_tag(search_path, :method => "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>

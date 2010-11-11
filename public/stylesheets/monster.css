@@ -1,0 +1,61 @@
+/* Colors for NetHack screen symbol templates
+ *  * Users with personal stylesheets may override these colors.
+ *   *   For example      span class="nhsym clr-blue"
+ *    *   Alternatively    span class="nhsym" style="color:#0000AA;"
+ *     */
+.clr-blue          { color:#0000AA; }
+.clr-green         { color:#00AA00; }
+.clr-cyan          { color:#00AAAA; }
+.clr-red           { color:#AA0000; }
+.clr-magenta       { color:#AA00AA; }
+.clr-brown         { color:#AA5500; }
+.clr-lightgray     { color:#AAAAAA; }
+.clr-darkgray      { color:#555555; }
+.clr-brightblue    { color:#5555FF; }
+.clr-brightgreen   { color:#55FF55; }
+.clr-brightcyan    { color:#55FFFF; }
+.clr-orange        { color:#FF5555; }
+.clr-brightmagenta { color:#FF55FF; }
+.clr-yellow        { color:#FFFF55; }
+.clr-white         { color:#FFFFFF; }
+
+.mon-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mon-list li {
+}
+
+.mon-icons {
+  vertical-align: middle;
+  display: inline-block;
+  width:32px;
+  height:32px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+}
+.mon-image {
+}
+.mon-image img {
+}
+
+.mon-symbol {
+  font-family: Courier New, Courier, monospace;
+  font-size:200%;
+  text-align:center;
+  color: white;
+  background-color: black;
+  line-height: 32px;
+}
+
+.mon-name {
+  font-size: 150%;
+}
+
+.mon-data-title {
+  text-transform: uppercase;
+  color: grey;
+}
+
