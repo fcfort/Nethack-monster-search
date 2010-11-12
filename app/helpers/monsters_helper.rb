@@ -9,7 +9,7 @@ module MonstersHelper
     cap = String.new(str)
     if (!str.empty?)
       cap[0] = cap[0].capitalize
-      logger.info("#{str} #{cap[0]} is type #{cap[0].class}")
+      logger.warn("#{str} #{cap[0]} is type #{cap[0].class}")
     end
     cap
   end
