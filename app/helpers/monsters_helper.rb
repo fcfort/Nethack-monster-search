@@ -14,7 +14,7 @@ module MonstersHelper
   end
 
   def monster_symbol (sym)
-   sym == ' ' ? '&nbsp;'.html_safe : sym 
+    sym == ' ' ? '&nbsp;'.html_safe : sym 
   end
 
   def diff_to_color(diff)
@@ -28,7 +28,37 @@ module MonstersHelper
     logger.debug("percent #{percent}");
     "<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{diff}</span>".html_safe
   end
+  def corpse_percent(percent)
+    if percent == 100
+      'Always'
+    else
+    "#{percent}%".html_safe
+    end
+  end
+
+  def color_to_class(color_id)
+    case color_id
+    when 0 then 'clr-darkgray'
+    when 1 then 'clr-red'
+    when 2 then 'clr-green'
+    when 3 then 'clr-brown'
+    when 4 then 'clr-blue'
+    when 5 then 'clr-magenta'
+    when 6 then 'clr-cyan'
+    when 7 then 'clr-lightgray'
+    when 9 then 'clr-orange'
+    when 10 then'clr-brightgreen'
+    when 11 then'clr-yellow'
+    when 12 then'clr-brightblue'
+    when 13 then'clr-brightmagenta'
+    when 14 then 'clr-brightcyan'
+    when 15 then 'clr-white'
+    else
+      logger.debug("color error #{color_id}")
+    end
+  end
+
 
 end
 
-  
+

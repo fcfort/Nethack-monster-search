@@ -1,13 +1,14 @@
-<h1>Monster#index</h1>
-<% form_tag 'index', :method => :get, do %>
-  <p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+<div id="mon_div">
+<h1>Nethack monster search</h1>
 
-<div id="products">
-  <ul class="mon-list">
+  <% form_tag 'index', :method => :get, :remote => true, do %>
+    <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+
+  <ul class="mon-list" id="mon-ajax">
     <%= render @monsters %>
   </ul>
 </div>

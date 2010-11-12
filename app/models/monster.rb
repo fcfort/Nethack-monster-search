@@ -25,7 +25,7 @@ class Monster < ActiveRecord::Base
 
   def self.search(search)
     if search && search.length == 1
-      find(:all, :conditions => ['name LIKE ? or symbol = ?', "%#{search}%", search])
+      find(:all, :conditions => ['symbol = ?', search])
     elsif search
       find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
     else

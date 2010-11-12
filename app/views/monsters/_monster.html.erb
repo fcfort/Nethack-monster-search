@@ -1,5 +1,8 @@
 <li>
-<div class="mon-icons mon-symbol"><%= monster_symbol(monster.symbol) %>
+<div class="mon-icons mon-symbol">
+  <span class="<%= color_to_class(monster.color)%>">
+    <%= monster_symbol(monster.symbol) %>
+  </span>
 </div>
 <div class="mon-icons mon-image">
   <%= monster_icon(monster.name) %>
@@ -16,31 +19,41 @@
     Fight:
   </span>
   <span class="mon-data-text">
-    Difficulty: <%= diff_to_color(monster.difficulty) %> 
-    Speed 
-    Resistances
-    attacks
-    magic_res
+    <dl class="data-items">
+      <dd>Difficulty:</dd> <dt><%= diff_to_color(monster.difficulty) %></dt>
+      <dd>Speed:</dd> <dt><%=monster.speed%></dt>
+      <dd>Resistances:</dd> <dt><%=monster.resistances%></dt>
+      <dd>Attacks:</dd> <dt><%=monster.attacks%></dt>
+      <dd>Magic Resistance:</dd> <dt><%=monster.magic_res%></dt>
+    </dl>
   </span>
   </li>
-  <li class="eat">
-  <span class="mon-data-title">
-    Eat:
-    nutrition
-    Corpse
-    initial_effects
-    final_effects
-    intrinsics
+  <% if monster.corpse != 0 %>
+    <li class="eat">
+    <span class="mon-data-title">
+      Eat:
 
-  </span>
+    </span>
+    <span class="mon-data-text">
+      <dl class="data-items">
+        <dd>Nutrition:</dd> <dt><%= monster.nutrition %></dt>
+        <dd>Corpse?:</dd> <dt><%= corpse_percent(monster.corpse) %>
+        <dd>Initially:</dd> <dt><%= monster.initial_effects %></dt>
+        <dd>Finally:</dd> <dt><%= monster.final_effects %></dt>
+        <dd>Intrinsics:</dd> <dt><%= monster.intrinsics %></dt>
+      </dl>
+    </span>
+    </li>
+  <% end %>
+  <li>
+  <span class="mon-data-title">Misc:</span>
   <span class="mon-data-text">
-    Lvl
+    <dl class="data-items">
+      <dd>Alignment:</dd> <dt><%= monster.alignment%></dt>
+      <dd>Weight:</dd> <dt><%= monster.weight %></dt>
+    </dl> 
   </span>
   </li>
-  stats
-  alignment
-  weight
-
 
 </ul>
-  </li>
+</li>
