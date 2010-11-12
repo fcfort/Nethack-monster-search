@@ -21,7 +21,7 @@ class Monster < ActiveRecord::Base
 	# initial_effects 	text 	utf8_bin 		No 	Next
 	# intrinsics 	text 	utf8_bin 		No 	None 	 
 	# url 	text 	utf8_bin 		No 	None 		Brows
-  attr_accessible :name, :armor_class, :alignment, :attacks, :corpse, :difficulty, :frequency, :genocidable, :group, :symbol, :level, :magic_res, :nutrition, :resistances, :size, :speed, :weight, :final_effects, :initial_effects, :intrinsics, :url
+  attr_accessible :name, :armor_class, :alignment, :attacks, :corpse, :difficulty, :frequency, :genocidable, :group, :symbol, :level, :magic_res, :nutrition, :resistances, :size, :speed, :weight, :final_effects, :initial_effects, :intrinsics, :url, :color
 
   def self.search(search)
     if search && search.length == 1

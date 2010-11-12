@@ -8,8 +8,8 @@ module MonstersHelper
   def capitalize_first(str)
     cap = String.new(str)
     if (!str.empty?)
-      cap[0] = cap[0].capitalize
-      logger.warn("#{str} #{cap[0]} is type #{cap[0].class}")
+      # logger.warn("#{str} #{cap[0]} is type #{cap[0].class}")
+      cap[0] = cap.first.capitalize
     end
     cap
   end
@@ -25,8 +25,8 @@ module MonstersHelper
     red_amount = 255 * percent 
     green_amount = green_amount.round
     red_amount = red_amount.round
-    logger.debug("<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{diff}</span>");
-    logger.debug("percent #{percent}");
+    # logger.debug("<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{diff}</span>");
+    # logger.debug("percent #{percent}");
     "<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{diff}</span>".html_safe
   end
   def corpse_percent(percent)
