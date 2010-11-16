@@ -22,9 +22,16 @@
     <dl class="data-items">
       <dd>Difficulty:</dd> <dt><%= diff_to_color(monster.difficulty) %></dt>
       <dd>Speed:</dd> <dt><%=monster.speed%></dt>
-      <dd>Resistances:</dd> <dt><%=monster.resistances%></dt>
+      <% if !monster.resistances.empty? %>
+        <dd class="resistances">Resistances:</dd>
+        
+        <div class="res-popup" style="display:none;"><%= resistances_text(monster.resistances)%></div>
+          <dt>
+            <% resistances(monster.resistances).each do |r| %><span class="<%= r[:class] %>"><%= r[:symbol] %></span><% end %>      
+          </dt>
+      <% end %>
       <dd>Attacks:</dd> <dt><%=monster.attacks%></dt>
-      <dd>Magic Resistance:</dd> <dt><%=monster.magic_res%></dt>
+      <dd>Magic Resistance:</dd> <dt><%= monster.magic_res %></dt>
     </dl>
   </span>
   </li>

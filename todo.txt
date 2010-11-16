@@ -1,0 +1,7 @@
+<done>sort search results
+add some lines at top saying how to use it
+add error message for no search results
+add grey text in search bar
+separate search bar from search results;
+improve title of page
+make background look like the game

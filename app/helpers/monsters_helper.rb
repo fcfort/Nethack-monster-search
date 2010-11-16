@@ -19,7 +19,11 @@ module MonstersHelper
   end
 
   def diff_to_color(diff)
-    max_diff = 57.0
+    orig_diff = diff
+    max_diff = 34.0
+    if diff > max_diff
+      diff = max_diff
+    end
     percent = (diff / max_diff)
     green_amount = 255 * (1 - percent)
     red_amount = 255 * percent 
@@ -27,7 +31,7 @@ module MonstersHelper
     red_amount = red_amount.round
     # logger.debug("<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{diff}</span>");
     # logger.debug("percent #{percent}");
-    "<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{diff}</span>".html_safe
+    "<span style='color: rgb(#{red_amount},#{green_amount},0)'>#{orig_diff}</span>".html_safe
   end
   def corpse_percent(percent)
     if percent == 100
@@ -59,6 +63,67 @@ module MonstersHelper
     end
   end
 
+  def resistances(res)
+    res.upcase!
+    res_list = res.split(//)
+    res_output = []
+    logger.debug("#{res_list}")
+    res_list.each do |r|
+      case r 
+      when 'F'
+        res_output << {:class => 'res-fire', :symbol => 'F'}
+      when 'C'
+        res_output << {:class => 'res-cold', :symbol => 'C'}
+      when 'S'
+        res_output << {:class => 'res-sleep', :symbol => 'S'}
+      when 'D'
+        res_output << {:class => 'res-disintegration', :symbol => 'D'}
+      when 'E'
+        res_output << {:class => 'res-electric', :symbol => 'E'}
+      when 'P'
+        res_output << {:class => 'res-poison', :symbol => 'P'}
+      when 'A'
+        res_output << {:class => 'res-acid', :symbol => 'A'}
+      when '*'
+        res_output << {:class => 'res-stone', :symbol => '*'}
+      else 
+        res_output << {:class => '', :symbol => 'error'}
+        logger.warn("resist mismatch")
+      end
+    end
+    return res_output
+  end
+
+  def resistances_text(res)
+    res.upcase!
+    res_list = res.split(//)
+    res_output = []
+    logger.debug("#{res_list}")
+    res_list.each do |r|
+      case r 
+      when 'F'
+        res_output << "Fire"
+      when 'C'
+        res_output << 'Cold'
+      when 'S'
+        res_output << 'Sleep'
+      when 'D'
+        res_output << 'Disintegration'
+      when 'E'
+        res_output << 'Electric'
+      when 'P'
+        res_output << 'Poison'
+      when 'A'
+        res_output << 'Acid'
+      when '*'
+        res_output << 'Stoning'
+      else 
+        res_output << 'error'
+        logger.warn("resist mismatch")
+      end
+    end
+    return res_output.join(", ")
+  end
 
 end
 

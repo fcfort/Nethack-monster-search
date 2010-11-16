@@ -1,6 +1,23 @@
 $('mon-ajax').update("<%= escape_javascript(render @monsters) %>")
-/* $$('ul.mon-list > li').each(function(item) {
-    item.onmouseover = function(){new Effect.Highlight( item)}
+/*
+$$('ul.mon-list > li').each(function(item) {
+    item.writeAttribute('resting');
     })
-*/
 
+$$('ul.mon-list > li').each(function(item) {
+    item.onmouseover = function() {
+      if($('id').readAttribute('resting') == 'resting') {
+            $('id').writeAttribute('resting',false); 
+            new Effect.Highlight(item, {queue: 'end', startcolor:'#b3ff8d', endcolor:'#ffffff',afterFinish:function(obj) {obj.element.writeAttribute('resting')}});
+      }
+    }
+    })
+ */
+/*
+$$('.resistances > dt').each( function(el) {
+      el.onmouseover = function() {
+        alert('hey');
+      };
+
+      });
+*/

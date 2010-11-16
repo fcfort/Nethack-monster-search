@@ -1,10 +1,9 @@
 NethackMonster::Application.routes.draw do
   get "monsters/index"
-
-  get "monster/index"
-
-  get "monster/search"
-
+  get "monsters/search"
+  #map.root :controller => 'monsters', :action => 'search'  
+  root :to => "monsters#index"
+  resources :monsters
   # match 'search_monster_path', :to => 'monster#search'
 
   # resources :monster do
@@ -43,7 +42,7 @@ NethackMonster::Application.routes.draw do
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
-  #   end
+#   end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do

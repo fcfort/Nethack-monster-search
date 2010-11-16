@@ -19,8 +19,23 @@
 .clr-yellow        { color:#FFFF55; }
 .clr-white         { color:#FFFFFF; }
 
+
+.res-fire           { color:#A00; }
+.res-cold           { color:#00A; }
+.res-sleep          { color:#CC0; }
+.res-disintegration { color:#000; }
+.res-electric       { color:#55F; }
+.res-poison         { color:#0A0; }
+.res-acid           { color:#A0A; }
+.res-stone          { color:#555; }
+
 body {
-  background:blue;
+  background:#21421E;
+}
+
+.title {
+  color: white;
+  font-family: Courier New, Courier, monospace;
 }
 
 #mon_div {
